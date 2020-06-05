@@ -1,0 +1,1 @@
+define([],()=>({viewModel:function(){this.temp={}},template:'\n            <div page="Home">\n    <h3>Home Page</h3>\n</div>\n        '}));

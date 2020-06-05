@@ -23,4 +23,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <platform name="browser">
+        <hook type="before_build" src="www/js/Platform/Cordova/Hooks/beforeBuild.js" />
+        <hook type="after_build" src="www/js/Platform/Cordova/Hooks/afterBuild.js" />
+    </platform>
 </widget>
