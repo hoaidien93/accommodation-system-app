@@ -6,7 +6,6 @@ let css = sass.renderSync({
     outputStyle: 'compressed'
 }).css;
 
-
 // Remove file build fail
 try {
     fs.rmdirSync(`./www/js/pages/Build/`, { recursive: true });
@@ -35,28 +34,25 @@ try {
 } catch (e) {
 
 }
-try {
-    files = fs.readdirSync("./www/js/Components/");
-    fs.mkdirSync("./www/js/Components/Build/");
-    files.forEach((fileName) => {
-        if (/.json$/.test(fileName)) {
-            let nameWithoutExtension = /(.*).json$/.exec(fileName)[1];
-            content = fs.readFileSync(`./www/js/Components/${fileName}`, "utf-8");
-            content = JSON.parse(content);
-            let codeContent = fs.readFileSync(`./www/js/Platform/Cordova/Sample/Combine/Component.sample`, 'utf-8');
-            codeContent = codeContent.replace(/{{name}}/g, content.name);
-            codeContent = codeContent.replace(/{{tagName}}/g, content.tagName);
-            codeContent = uglifyJS.minify(codeContent, { keep_fnames: true, mangle: false });
-            fs.writeFileSync(`./www/js/Components/Build/${nameWithoutExtension}.build.js`, codeContent.code);
-            css += sass.renderSync({
-                file: `./www/js/Module/Components/${nameWithoutExtension}/style.scss`,
-                outputStyle: 'compressed'
-            }).css;
-        }
-    });
-}catch(e){
+files = fs.readdirSync("./www/js/Components/");
+fs.mkdirSync("./www/js/Components/Build/");
+files.forEach((fileName) => {
+    if (/.json$/.test(fileName)) {
+        let nameWithoutExtension = /(.*).json$/.exec(fileName)[1];
+        content = fs.readFileSync(`./www/js/Components/${fileName}`, "utf-8");
+        content = JSON.parse(content);
+        let codeContent = fs.readFileSync(`./www/js/Platform/Cordova/Sample/Combine/Component.sample`, 'utf-8');
+        codeContent = codeContent.replace(/{{name}}/g, content.name);
+        codeContent = codeContent.replace(/{{tagName}}/g, content.tagName);
+        codeContent = uglifyJS.minify(codeContent, { keep_fnames: true, mangle: false });
+        fs.writeFileSync(`./www/js/Components/Build/${nameWithoutExtension}.build.js`, codeContent.code);
+        css += sass.renderSync({
+            file: `./www/js/Module/Components/${nameWithoutExtension}/style.scss`,
+            outputStyle: 'compressed'
+        }).css;
+    }
+});
 
-}
 // Add in index.css
 fs.writeFileSync("./www/css/index.build.css", css);
 

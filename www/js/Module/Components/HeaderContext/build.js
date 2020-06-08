@@ -1,1 +1,0 @@
-define([],()=>({viewModel:function(){},template:'\n            <div class="header-context">\n    This is header context\n</div>\n        '}));
