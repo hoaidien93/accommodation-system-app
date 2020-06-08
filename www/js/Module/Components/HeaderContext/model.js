@@ -76,9 +76,7 @@ function headerEffect() {
 }
 
 this.afterBinding = () => {
-    let page = this.getAttribute('page') || "";
-    if (page === "Home") this.isPageHome(true);
-    me.isSearchResultPage(page === "SearchResult");
+    if (app.Screen === "Home") this.isPageHome(true);
     let stackScreen = app.stackScreen;
     if (stackScreen.length > 1) {
         me.isShowHome(true);
