@@ -8,12 +8,22 @@ document.addEventListener("deviceready", () => {
         requirejs.config({
             baseUrl: 'js'
         });
-        require(['Platform/Core/Application'], function (Application) {
-            var app = new Application(document.querySelector('.app'));
-            window.app = app;
-            app.Screen = "Home";
-            app.Start();
-        });
+        require(["config"], function (config) {
+            console.log(config);
+            listComponents = config.COMPONENT_USED.map((e) => {
+                return `${config.COMPONENT_FOLDER}/Build/${e}.build`;
+            });
+            require(["Platform/Core/Abstract/AbstractComponent"], function () {
+                require([...listComponents], function () {
+                    require(['Platform/Core/Application'], function (Application) {
+                        var app = new Application(document.querySelector('.app'));
+                        window.app = app;
+                        app.Screen = "Home";
+                        app.Start();
+                    });
+                });
+            });
+        })
     }
     h.parentNode.appendChild(requireJS);
 }, false);

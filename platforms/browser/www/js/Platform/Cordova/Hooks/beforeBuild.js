@@ -101,7 +101,8 @@ function combine(folderURL, folderConfig) {
         fs.writeFileSync(`${folderURL}/${folder}/build.js`, codeContent.code);
     });
 }
-combine('./www/js/Module/Pages', './www/js/pages');
+combine('./www/js/Module/Pages', './www/js/Pages');
+combine('./www/js/Module/Components', './www/js/Components');
 
 
 
