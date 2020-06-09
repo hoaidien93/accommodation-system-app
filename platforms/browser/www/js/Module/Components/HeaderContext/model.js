@@ -17,17 +17,7 @@ this.dataSourceChanged = (keyword) => {
 
 
 this.openSlider = (data, e) => {
-    let target = e.target.getAttribute('target');
-    if (target == null) {
-        target = '.leftSlider';
-    }
-    if (target) {
-        let itemTarget = document.querySelector(target);
-        if (itemTarget) {
-            let swipeEvent = new CustomEvent('openslider', {});
-            itemTarget.dispatchEvent(swipeEvent);
-        }
-    }
+    slider.show();
 }
 
 this.searchInput_OnPress = (model, event) => {

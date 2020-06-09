@@ -102,6 +102,11 @@ textarea {
     background-color: white;
 }
 
+.app-wrapper > .app > div{
+    width: 100vw;
+    min-height: 100vh;
+}
+
 .app-wrapper > .app-next{
     background-color: #fff;
 }
