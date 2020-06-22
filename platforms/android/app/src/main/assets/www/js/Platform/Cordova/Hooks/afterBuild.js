@@ -18,7 +18,8 @@ fs.rmdir(`./www/js/Components/Build/`, { recursive: true }, (err) => {
 
 console.log("--- remove");
 let arrRemove = [
-    './www/js/Module/Pages'
+    './www/js/Module/Pages',
+    './www/js/Module/Components'
 ];
 arrRemove.forEach((folder) => {
     fs.readdir(`${folder}`, (err, files) => {

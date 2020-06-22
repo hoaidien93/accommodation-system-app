@@ -1,6 +1,7 @@
 {
     "name": "HeaderContext",
-    "tagName": "com-header",
+    "tagName": "com-headercontext",
     "dependencies": [
+        "Store/Store"
     ]
 }

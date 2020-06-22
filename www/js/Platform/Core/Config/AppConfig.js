@@ -8,7 +8,7 @@ document.addEventListener("deviceready", () => {
         requirejs.config({
             baseUrl: 'js'
         });
-        require(["config"], function (config) {
+        require(["config","API/AbstractAPI"], function (config) {
             console.log(config);
             listComponents = config.COMPONENT_USED.map((e) => {
                 return `${config.COMPONENT_FOLDER}/Build/${e}.build`;

@@ -1,0 +1,8 @@
+{
+    "name": "Blank",
+    "tagName": "com-blank",
+    "isWidget": false,
+    "dependencies": [
+        "Store/Store"
+    ]
+}

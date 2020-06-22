@@ -5,7 +5,7 @@ define(() => {
             this.state = {};
             // Prevent bind below component
             this.NOT_BIND_BELOW = "DoNotBindBelowThis:true";
-            this.uniqueID = "duplicated";
+            this.UNIQUEID = "duplicated";
             this.comDataChanged = function () {
             }
             this.wrapper = document.createElement("div");
@@ -13,19 +13,19 @@ define(() => {
  
         connectedCallback() {
             // Remove duplicate
-            if (this.querySelector("#" + this.uniqueID)) {
-                let innerTemplate = this.querySelector("#" + this.uniqueID).innerHTML;
-                $(this).find(`#${this.uniqueID}`).remove();
+            if (this.querySelector("#" + this.UNIQUEID)) {
+                let innerTemplate = this.querySelector("#" + this.UNIQUEID).innerHTML;
+                $(this).find(`#${this.UNIQUEID}`).remove();
             }
             else {
                 this.template = this.innerHTML + this.template;
                 this.innerHTML = `
-                        <div id="${this.uniqueID}">
+                        <div id="${this.UNIQUEID}">
                         </div>
                     `;
-                this.wrapper = this.querySelector("#" + this.uniqueID);
+                this.wrapper = this.querySelector("#" + this.UNIQUEID);
             }
-            this.wrapper.setAttribute("id", this.uniqueID);
+            this.wrapper.setAttribute("id", this.UNIQUEID);
  
             let dataBind = this.getAttribute("data-bind") || "";
             let allowBinding = this.getAttribute("allowBinding") || false;

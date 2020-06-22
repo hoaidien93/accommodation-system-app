@@ -9,7 +9,26 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-firebase-messaging": {
+      "FIREBASE_MESSAGING_VERSION": "20.1.+",
+      "ANDROIDX_CORE_VERSION": "1.2.+",
+      "FIREBASE_ANALYTICS_COLLECTION_ENABLED": "true",
+      "FIREBASE_ANALYTICS_VERSION": "17.4.+",
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-firebase-analytics": {
+      "FIREBASE_ANALYTICS_COLLECTION_ENABLED": "true",
+      "FIREBASE_ANALYTICS_VERSION": "17.4.+",
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    }
+  }
 }
