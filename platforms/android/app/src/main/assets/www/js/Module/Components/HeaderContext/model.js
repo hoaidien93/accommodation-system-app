@@ -71,9 +71,21 @@ this.afterBinding = () => {
 
 this.callSearch = () => {
     searchAPI.getPosts(this.searchInput() || "").then((res) => {
-        $(document).trigger("changeSearchResult", { data: res.data.hits });
-        console.log(res);
+        let data = res.data.hits;
+        if (app.Screen === "Home") {
+            $(document).trigger("changeSearchResult", { data });
+        }
+        else {
+            app.setPage("Home", { data });
+        }
     }).catch((e) => {
         console.log(e);
     })
 }
+
+this.onEnter = function (data, e) {
+    if(e.keyCode === 13){
+        me.callSearch();
+    }
+    return true;
+};

@@ -82,3 +82,10 @@ this.callSearch = () => {
         console.log(e);
     })
 }
+
+this.onEnter = function (data, e) {
+    if(e.keyCode === 13){
+        me.callSearch();
+    }
+    return true;
+};

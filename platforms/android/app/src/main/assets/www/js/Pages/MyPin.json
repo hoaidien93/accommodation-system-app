@@ -1,5 +1,5 @@
 {
-    "name": "MyRoom",
+    "name": "MyPin",
     "dependencies": [
         "API/Post"
     ]

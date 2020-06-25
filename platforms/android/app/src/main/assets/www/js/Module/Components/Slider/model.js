@@ -19,7 +19,6 @@ this.changePage = (page) => {
 }
 
 this.isShow.subscribe((newValue) => {
-    console.log('voday');
     if (newValue) {
         store.isShowBlank(true);
         $(this).css(`margin-left`, '0px');

@@ -23,7 +23,6 @@ this.selectedDistrict.subscribe((e) => {
 this.selectedWard.subscribe((e) => console.log(e));
 addressAPI.getDistricts().then((res) => {
     this.listDistrict(res.data);
-    console.log(this.listDistrict());
 }).catch((e) => {
     console.log(e);
 })
@@ -47,7 +46,6 @@ this.publish = () => {
         store.isShowLoading(false);
         //Hiện Popup
         app.setPage("MyRoom");
-        console.log(res);
     }).catch((e) => {
         console.log(e);
     })

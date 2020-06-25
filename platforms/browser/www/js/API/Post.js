@@ -21,6 +21,11 @@ define(["API/AbstractAPI"], () => {
             return this.send("GET", `/user/add-user-pin?post_id=${id}`, {
             });
         }
+
+        this.unpin = (id) => {
+            return this.send("GET", `/user/un-user-pin?post_id=${id}`, {
+            });
+        }
     }
     return new APIPost();
 })
