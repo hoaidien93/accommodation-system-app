@@ -1,5 +1,6 @@
 const searchAPI = require("API/Search");
 const addressAPI = require("API/Address");
+const postAPI = require("API/Post");
 const store = require("Store/Store");
 const PAGE_SIZE = 10;
 let dataChangePage = this._request.data;
@@ -49,3 +50,13 @@ $(document).off("changeSearchResult");
 $(document).on("changeSearchResult", (event, res) => {
     this.resultSearch(res.data);
 })
+
+this.addFavorite = (data, event) => {
+    console.log(data);
+    event.currentTarget.getElementsByTagName('path')[0].setAttribute("fill", "red");
+    postAPI.pin(data.id).then((res) => {
+        if(!res.code){
+            app.setPage("MyPin");
+        }
+    }).catch((e) => console.log(e));
+}

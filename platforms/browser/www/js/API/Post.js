@@ -11,6 +11,16 @@ define(["API/AbstractAPI"], () => {
                 size: SIZE
             });
         }
+
+        this.getMyPin = (page = 0) => {
+            return this.send("GET", "/user/list-user-pin", {
+            });
+        }
+
+        this.pin = (id) => {
+            return this.send("GET", `/user/add-user-pin?post_id=${id}`, {
+            });
+        }
     }
     return new APIPost();
 })

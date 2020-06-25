@@ -3,6 +3,7 @@
     "dependencies": [
         "Store/Store",
         "API/Search",
-        "API/Address"
+        "API/Address",
+        "API/Post"
     ]
 }
