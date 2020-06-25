@@ -18,10 +18,10 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
-    "cordova-plugin-whitelist": "1.3.4",
     "cordova-support-android-plugin": "1.0.2",
     "cordova-support-google-services": "1.4.0",
     "cordova-plugin-firebase-analytics": "4.3.0",
-    "cordova-plugin-firebase-messaging": "4.4.1"
+    "cordova-plugin-firebase-messaging": "4.4.1",
+    "cordova-plugin-whitelist": "1.3.4"
   };
 });

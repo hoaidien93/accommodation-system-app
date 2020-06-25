@@ -14,7 +14,7 @@
 </div>
 <div class="dash"></div>
 <div class="group">
-    <div class="content-group" data-bind="event:{tap: backHome}">
+    <div class="content-group" data-bind="event:{tap: changePage.bind(this,'Home')}">
         <svg xmlns="http://www.w3.org/2000/svg" width="25.136" height="20" viewBox="0 0 25.136 20">
             <g id="Group_430" data-name="Group 430" transform="translate(1351.337 -8.897)">
                 <path id="Path_963" data-name="Path 963"
@@ -30,7 +30,6 @@
 </div>
 <div class="thin-dash"></div>
 <div class="group">
-
     <div class="content-group" data-bind="event:{tap : myFavorite}">
         <svg xmlns="http://www.w3.org/2000/svg" width="17.147" height="20" viewBox="0 0 17.147 20">
             <g id="Group_1588" data-name="Group 1588" transform="translate(2225.608 -2154.9)">
@@ -47,7 +46,7 @@
 </div>
 <div class="thin-dash"></div>
 <div class="group">
-    <div class="content-group" data-bind="event:{tap : myRoom}">
+    <div class="content-group" data-bind="event: {tap: changePage.bind(this,'MyRoom')}">
         <svg xmlns="http://www.w3.org/2000/svg" width="18.399" height="20.694" viewBox="0 0 18.399 20.694">
             <g id="Group_1408" data-name="Group 1408" transform="translate(2166.653 -2109.561)">
                 <path id="Path_1691" data-name="Path 1691"
@@ -61,7 +60,23 @@
                     fill="#8c8c8c" />
             </g>
         </svg>
-        <p>Phòng trọ của tôi</p>
+        <p>Quản lý bài đăng</p>
+    </div>
+</div>
+<div class="thin-dash"></div>
+<div class="group">
+    <div class="content-group" data-bind="event:{tap : changePage.bind(this,'NotificationSetting')}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17.147" height="20" viewBox="0 0 17.147 20">
+            <g id="Group_1588" data-name="Group 1588" transform="translate(2225.608 -2154.9)">
+                <path id="Path_1744" data-name="Path 1744"
+                    d="M-2221.327,2156.138c.011.213,0,.4.031.586a1.823,1.823,0,0,0,1.756,1.593q2.512.03,5.025,0a1.844,1.844,0,0,0,1.773-1.841c0-.106,0-.211,0-.348.328,0,.632,0,.936,0a15.662,15.662,0,0,1,1.787.039,1.784,1.784,0,0,1,1.553,1.839q.006,7.514,0,15.029a1.815,1.815,0,0,1-1.821,1.86q-6.736.008-13.473,0a1.822,1.822,0,0,1-1.833-1.71,3.069,3.069,0,0,1-.013-.322q0-7.34,0-14.68a1.889,1.889,0,0,1,.848-1.74,1.807,1.807,0,0,1,.831-.295C-2223.072,2156.114-2222.213,2156.138-2221.327,2156.138Zm4.31,13.757c1.412,0,2.823,0,4.235,0a.606.606,0,0,0,.646-.623.6.6,0,0,0-.622-.62q-4.275,0-8.549,0a.581.581,0,0,0-.541.318.618.618,0,0,0,.57.927C-2219.857,2169.9-2218.437,2169.9-2217.017,2169.9Zm-.013-7.505h4.076a2.041,2.041,0,0,0,.315-.016.6.6,0,0,0,.5-.6.626.626,0,0,0-.712-.642h-8.364c-.044,0-.087,0-.131,0a.636.636,0,0,0-.587.641.62.62,0,0,0,.588.607c.087.008.176,0,.263,0Zm-.012,3.749h2.656c.543,0,1.087.006,1.631,0a.6.6,0,0,0,.616-.674.62.62,0,0,0-.7-.571q-3.6,0-7.207,0h-1.236a.6.6,0,0,0-.6.393.613.613,0,0,0,.6.853C-2219.865,2166.142-2218.454,2166.139-2217.042,2166.139Z"
+                    fill="#8c8c8c" />
+                <path id="Path_1745" data-name="Path 1745"
+                    d="M-2217.145,2157.36c-.674,0-1.347,0-2.021,0a.924.924,0,0,1-1.007-1.036c0-.167,0-.335,0-.5a.9.9,0,0,1,.913-.916q2.112-.009,4.224,0a.88.88,0,0,1,.892.848,5.488,5.488,0,0,1,0,.714.884.884,0,0,1-.907.89C-2215.745,2157.367-2216.445,2157.36-2217.145,2157.36Z"
+                    transform="translate(0.122)" fill="#8c8c8c" />
+            </g>
+        </svg>
+        <p>Cấu hình thông báo</p>
     </div>
 </div>
 <div class="thin-dash"></div>

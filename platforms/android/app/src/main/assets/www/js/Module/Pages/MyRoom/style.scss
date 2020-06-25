@@ -1,0 +1,22 @@
+#my-room-page{
+    .header-title{
+        text-align: center;
+        color: #403c3c;
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    .add-post{
+        top: 70px;
+        left: 10px;
+        
+        button.btn-add-post{
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            border: 1px solid var(--main-color-orange-dark);
+            background-color: var(--main-color-orange-dark);
+            color: white;
+        }
+    }
+    
+}

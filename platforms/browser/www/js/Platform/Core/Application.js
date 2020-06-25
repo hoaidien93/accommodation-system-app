@@ -82,8 +82,6 @@ define(function () {
         }
 
         function setFixed() {
-            console.log(1);
-            console.log($('.pos-fixed').length);
             $('.pos-fixed').css({
                 "position": "fixed",
             });

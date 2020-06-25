@@ -1,0 +1,6 @@
+{
+    "name": "NotificationSetting",
+    "dependencies": [
+        "API/Notify"
+    ]
+}

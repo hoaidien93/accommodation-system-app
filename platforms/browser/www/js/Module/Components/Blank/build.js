@@ -1,0 +1,1 @@
+define(["Store/Store"],()=>({viewModel:function(){let store=require("Store/Store");this.isShow=store.isShowBlank},template:'\n            <div class="blank" data-bind="visible: isShow">\n</div>\n        '}));

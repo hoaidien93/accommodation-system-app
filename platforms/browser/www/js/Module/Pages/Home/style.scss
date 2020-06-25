@@ -53,13 +53,18 @@
         .content-wrapper {
             position: relative;
             padding: 5px;
+            width: 64%;
             .content-title{
                 font-size: .9rem;
                 font-weight: bold;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
             }
             .content-bottom{
                 position: absolute;
                 bottom: 5px;
+                width: 100%;
                 .content-price {
                     color: #c52020;
                     font-size: .9rem;
@@ -68,20 +73,30 @@
                 }
                 .content-description {
                     font-size: .8rem;
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 100%;
                     span{
                         position: relative;
                         padding-right: 5px;
                         color:#5b4e4e;
+                        width: 40%;
                     }
-                    span:not(:first-child)::before{
+                    span:not(:last-child)::before{
                         content: "";
                         position: absolute;
                         height: 100%;
                         top: 0px;
-                        left: -5px;
+                        right: 10px;
                         width: 1px;
                         height: 100%;
                         background-color: #5b4e4e;
+                    }
+                    .location{
+                        width: 55%;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
                     }
                 }
             }

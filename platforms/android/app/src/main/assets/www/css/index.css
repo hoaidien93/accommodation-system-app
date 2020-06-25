@@ -51,11 +51,13 @@ body{
 }
 
 html,body{
-    font-family: var(--main-font), sans-serif;
+    font-family: var(--main-font);
     cursor: pointer;
     height: 100%;
 }
-
+button{
+    font-family: var(--main-font);
+}
 ::-webkit-scrollbar {
     display: none;
 }

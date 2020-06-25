@@ -1,5 +1,5 @@
-const store = require("Store/Store");
-this.isShow = store.isOpenSlider;
+let store = require("Store/Store");
+this.isShow = ko.observable(false);
 
 this.backHome = () => {
 
@@ -13,28 +13,37 @@ this.myRoom = () => {
 this.logout = () => {
 
 }
+this.changePage = (page) => {
+    app.setPage(page);
+    store.isShowBlank(false);
+}
+
 this.isShow.subscribe((newValue) => {
+    console.log('voday');
     if (newValue) {
         store.isShowBlank(true);
         $(this).css(`margin-left`, '0px');
     }
     else {
         store.isShowBlank(false);
-        this.isShow = false;
         $(this).css(`margin-left`, '-100vw');
     }
 });
 
+
 this.afterBinding = () => {
-    document.addEventListener("swipe", (e) => {
-        if (e.detail.direction === "left" && store.isOpenSlider()) {
-            store.isOpenSlider(false);
+    window.slider = this;
+    $(document).off('tap');
+    $(document).on("swipe", (e) => {
+        if (e.detail.direction === "left" && this.isShow()) {
+            this.isShow(false);
         }
     });
-    document.addEventListener('tap', (e) => {
+    $(document).off('tap');
+    $(document).on('tap', (e) => {
         let pageX = e.detail.pageX;
-        if (store.isOpenSlider() && pageX > this.offsetWidth) {
-            store.isOpenSlider(false);
+        if (this.isShow() && pageX > this.offsetWidth) {
+            this.isShow(false);
         }
     });
 }
