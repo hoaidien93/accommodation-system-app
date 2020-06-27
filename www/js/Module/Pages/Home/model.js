@@ -30,7 +30,6 @@ this.afterBinding = () => {
 
 let getStartPage = () => {
     store.isShowLoading(true);
-    console.log(1);
     searchAPI.indexPage(page++).then((res) => {
         size = Math.ceil(res.data.total / PAGE_SIZE);
         this.resultSearch.push(...res.data.hits.map((e) => { return Object.assign(e, { pinned: ko.observable(false) }) }));

@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="search-result" data-bind="foreach: resultWithPin">
-            <div class="search-item">
+            <div class="search-item" data-bind="directInfo: {to: 'PostDetail', data: $data}">
                 <div class="image-wrapper">
                     <img data-bind="attr: {src: image ? image: './img/example.jpg'}">
                 </div>
@@ -35,7 +35,7 @@
                     <div class="content-title" data-bind="text: description"></div>
                     <div class="content-bottom">
                         <div class="content-price">
-                            <div class="price" data-bind="text: price"></div>
+                            <div class="price" data-bind="convertMoney: price"></div>
                             <svg data-bind="event: {tap: $root.addFavorite}" 
                                 xmlns="http://www.w3.org/2000/svg" width="21.828" height="20" viewBox="0 0 21.828 20">
                                 <path id="Path_1261" data-name="Path 1261"
