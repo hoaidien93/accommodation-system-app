@@ -1,17 +1,30 @@
 <div id="post-detail-page" data-bind="using: postDetail">
     <com-slider></com-slider>
     <com-headercontext></com-headercontext>
-
+    <div data-bind="class: $root.isShowImageView() ? 'image-viewer active': 'image-viewer', event: {swipe : $root.changeIndexImage}">
+        <div class="close-image" data-bind="event: {tap: $root.closeImageView}">X</div>
+        <img src="./img/example.jpg">
+        <div class="count" data-bind="using: $root.pagingImage">
+            <span data-bind="text: current"></span>
+             / 
+            <span data-bind="text: max"></span>
+        </div>
+    </div>
     <div class="body-content">
         <div class="list-image">
             <div class="img-top">
-                <div style="background-image: url(/img/example.jpg)"></div>
-                <div style="background-image: url(/img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"
+                    data-bind="event: {tap:$root.showImage.bind(this,0)}"></div>
+                <div style="background-image: url(./img/example.jpg)"
+                    data-bind="event: {tap:$root.showImage.bind(this,1)}"></div>
             </div>
             <div class="bottom">
-                <div style="background-image: url(/img/example.jpg)"></div>
-                <div style="background-image: url(/img/example.jpg)"></div>
-                <div style="background-image: url(/img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"
+                    data-bind="event: {tap:$root.showImage.bind(this,2)}"></div>
+                <div style="background-image: url(./img/example.jpg)"
+                    data-bind="event: {tap:$root.showImage.bind(this,3)}"></div>
+                <div style="background-image: url(./img/example.jpg)"
+                    data-bind="event: {tap:$root.showImage.bind(this,4)}"></div>
             </div>
         </div>
         <div class="content-wrapper">
@@ -46,7 +59,15 @@
         <div class="title">
             Địa chỉ
         </div>
-        <div class="street" data-bind="text: location"></div>
+        <div class="street">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10.114" height="15" viewBox="0 0 10.114 15">
+                <g id="Group_1458" data-name="Group 1458" transform="translate(2858.576 -1585.992)">
+                  <path id="Path_1725" data-name="Path 1725" d="M-2819.8,1627.21a2.45,2.45,0,0,1-2.447-2.447,2.45,2.45,0,0,1,2.447-2.447,2.45,2.45,0,0,1,2.447,2.447A2.45,2.45,0,0,1-2819.8,1627.21Zm0-3.816a1.371,1.371,0,0,0-1.369,1.369,1.371,1.371,0,0,0,1.369,1.369,1.371,1.371,0,0,0,1.369-1.369A1.37,1.37,0,0,0-2819.8,1623.394Z" transform="translate(-33.715 -33.714)" fill="#f79900"/>
+                  <path id="Path_1726" data-name="Path 1726" d="M-2853.519,1600.992a.752.752,0,0,1-.667-.4l-3.63-6.877-.006-.013a8.21,8.21,0,0,1-.754-2.651,5.063,5.063,0,0,1,5.057-5.057,5.063,5.063,0,0,1,5.057,5.057,8.216,8.216,0,0,1-.754,2.651l-.013.026-3.623,6.864A.751.751,0,0,1-2853.519,1600.992Zm-3.329-7.756,3.329,6.307,3.329-6.307a7.238,7.238,0,0,0,.65-2.187,3.984,3.984,0,0,0-3.979-3.979,3.984,3.984,0,0,0-3.979,3.979A7.241,7.241,0,0,0-2856.848,1593.236Z" fill="#f79900"/>
+                </g>
+              </svg>
+            <span  data-bind="text: location"></span>            
+        </div>
         <div class="mobile-phone" data-bind="text: phone"></div>
     </div>
 

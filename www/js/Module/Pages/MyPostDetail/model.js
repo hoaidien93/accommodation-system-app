@@ -1,8 +1,8 @@
 const addressAPI = require("API/Address");
 const store = require("Store/Store");
 const postAPI = require("API/Post");
-
-this.title = ko.observable("");
+let request = this._request;
+this.title = ko.observable(request.title || "");
 this.listDistrict = ko.observableArray([]);
 this.selectedDistrict = ko.observable({});
 this.listWards = ko.observable({});
@@ -11,8 +11,7 @@ this.listRoomTypes = ko.observableArray([]);
 this.selectedRoomType = ko.observable({});
 this.price = ko.observable(0);
 this.area = ko.observable(0);
-this.location = ko.observable("");
-this.description = ko.observable("");
+this.location = ko.observable(request.location || "");
 this.selectedDistrict.subscribe((e) => {
     if (e) {
         addressAPI
@@ -35,14 +34,18 @@ addressAPI.getRoomTypes().then((res) => {
     console.log(e);
 });
 
-this.publish = () => {
+this.update = () => {
+    
     store.isShowLoading(true);
-    let formData = new FormData($('#form-post')[0]);
-    postAPI.createPost(formData).then((res) => {
-        console.log(res);
-        store.isShowLoading(false);
-        //Hiện Popup
-        app.setPage("MyRoom");
+    let formData = new FormData();
+    formData.append('post_id', '3ff2f68a-d398-4998-8ef1-36d45b092160');
+    let files = $('input[type=file]')[0].files;
+    for (let i = 0; i < files.length; i++) {
+        formData.append("files[]", files[i]);
+    }
+    window.formData = formData;
+    postAPI.updateImage(formData).then((res) => {
+        console.log(res)
     }).catch((e) => {
         console.log(e);
     })

@@ -64,15 +64,23 @@ define(() => {
         init: function (element, valueAccessor, bindingsAccessor, viewModel, bindingContext) {
             var value = ko.unwrap(valueAccessor());
             let text = "";
-            if(parseInt(value) >= 1000000){
+            if (parseInt(value) >= 1000000) {
                 text = value / 1000000 + " triệu đồng";
-            }else{
-                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            } else {
+                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đồng";
             }
             element.innerHTML = text;
         },
         update: function (element, valueAccessor, bindingsAccessor, viewModel, bindingContext) {
             var value = ko.unwrap(valueAccessor());
+            let text = "";
+            if (parseInt(value) >= 1000000) {
+                text = value / 1000000 + " triệu đồng";
+            } else {
+                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            }
+            element.innerHTML = text;
         }
     }
+
 });

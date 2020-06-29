@@ -19,9 +19,6 @@ define(["API/AbstractAPI"], () => {
             });
         }
 
-        this.createPost = (data) => {
-            return this.send("POST", "/post/create", data);
-        }
     }
     return new APIAddress();
 })

@@ -123,4 +123,43 @@
             align-items: center;
         }
     }
+    .image-viewer.active{
+        transform: scale(1);
+        transition: .3s;
+    }
+    .image-viewer {
+        width: 100vw;
+        height: 100vh;
+        background-color: #373535cf;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        position: fixed;
+        transform: scale(0);
+        > img {
+            position: absolute;
+            top: 20%;
+            left: 1vw;
+            width: 98vw;
+            margin: auto;
+            display: block;
+        }
+        .close-image {
+            position: absolute;
+            top: 67px;
+            right: 10px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 5px;
+        }
+        .count {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            padding: 8px 22px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    }
 }

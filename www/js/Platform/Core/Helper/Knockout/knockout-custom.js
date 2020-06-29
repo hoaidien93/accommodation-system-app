@@ -67,7 +67,7 @@ define(() => {
             if (parseInt(value) >= 1000000) {
                 text = value / 1000000 + " triệu đồng";
             } else {
-                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đồng";
             }
             element.innerHTML = text;
         },
@@ -77,7 +77,7 @@ define(() => {
             if (parseInt(value) >= 1000000) {
                 text = value / 1000000 + " triệu đồng";
             } else {
-                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                text = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + " đồng";
             }
             element.innerHTML = text;
         }

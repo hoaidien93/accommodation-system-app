@@ -1,17 +1,17 @@
-<div id="post-detail-page" data-bind="with: postDetail">
+<div id="post-detail-page" data-bind="using: postDetail">
     <com-slider></com-slider>
     <com-headercontext></com-headercontext>
 
     <div class="body-content">
         <div class="list-image">
             <div class="img-top">
-                <div style="background-image: url(/img/example.jpg)"></div>
-                <div style="background-image: url(/img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"></div>
             </div>
             <div class="bottom">
-                <div style="background-image: url(/img/example.jpg)"></div>
-                <div style="background-image: url(/img/example.jpg)"></div>
-                <div style="background-image: url(/img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"></div>
+                <div style="background-image: url(./img/example.jpg)"></div>
             </div>
         </div>
         <div class="content-wrapper">
@@ -24,7 +24,7 @@
                 <span data-bind="text: title"></span>
             </div>
             <div class="price">
-                Giá: <span>6 triệu / tháng</span>
+                Giá: <span data-bind="convertMoney: price"></span><span> / tháng</span>
             </div>
             <div class="status">
                 <div>
@@ -33,7 +33,7 @@
                 </div>
                 <div>
                     <div>Diện tích</div>
-                    <div>20m²</div>
+                    <div><span data-bind="text: area"></span>&nbsp;m²</div>
                 </div>
                 <div>
                     <div>Đặt cọc</div>
@@ -46,20 +46,15 @@
         <div class="title">
             Địa chỉ
         </div>
-        <div class="street">
-            414/8 Tôn Thất Thuyết, Phường 3, Quận 4, Tp Hồ Chí Minh
-        </div>
-        <div class="mobile-phone">
-            0772000596
-        </div>
+        <div class="street" data-bind="text: location"></div>
+        <div class="mobile-phone" data-bind="text: phone"></div>
     </div>
 
     <div class="other-content">
         <div class="title">
             Ngày đăng
         </div>
-        <div class="date">
-            27/06/2020
+        <div class="date" data-bind="text: dateCreate">
         </div>
     </div>
 
@@ -68,9 +63,7 @@
         <div class="title">
             Chi tiết
         </div>
-        <div class="description">
-            Phòng trọ tiên nghi, đầy đủ nội thất: máy giặc, tủ lạnh, điều hòa, không chung chủ, giờ giấc tự do
-        </div>
+        <div class="description" data-bind="text: description"></div>
     </div>
 
     <div class="other-content">

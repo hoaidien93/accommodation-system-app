@@ -2,6 +2,7 @@
     "name": "CreatePost",
     "dependencies": [
         "API/Address",
-        "Store/Store"
+        "Store/Store",
+        "API/Post"
     ]
 }

@@ -5,14 +5,14 @@
         <h3 class="header-title">Danh sách yêu thích</h3>
         <div class="search-result">
             <!-- ko foreach: listMyPin -->
-            <div class="search-item">
+            <div class="search-item" data-bind="directInfo: {to: 'PostDetail', data: $data}">
                 <div class="image-wrapper">
                     <img data-bind="attr: {src: image ? image: './img/example.jpg'}">
                 </div>
                 <div class="content-wrapper">
-                    <div class="content-title" data-bind="text: description"></div>
+                    <div class="content-title" data-bind="text: title"></div>
                     <div class="content-bottom">
-                        <div class="price" data-bind="text: price"></div>
+                        <div class="price" data-bind="convertMoney: price"></div>
                         <div class="content-description">
                             <span data-bind="convertTime: created_at"></span>
                             <span data-bind="text: location" class="location"></span>

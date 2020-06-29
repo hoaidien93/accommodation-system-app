@@ -3,17 +3,17 @@
     <com-headercontext></com-headercontext>
     <div class="body-content">
         <h3 class="header-title">Thêm bài đăng</h3>
-        <div class="content-wrapper">
+        <form class="content-wrapper" id="form-post">
             <div class="row">
                 <div class="title">Tiêu đề</div>
                 <div class="content">
-                    <input type="text" id="title" placeholder="Tiêu đề bài đăng" data-bind="textInput: title">
+                    <input name="title" name="title" placeholder="Tiêu đề bài đăng" data-bind="textInput: title">
                 </div>
             </div>
             <div class="row">
                 <div class="title">Quận</div>
                 <div class="content">
-                    <select name="district" data-bind="
+                    <select  name="district_id" data-bind="
                             options: listDistrict,
                             optionsText: function(item){return item.name},
                             optionsValue: function(item){return item.id},
@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="title">Phường</div>
                 <div class="content">
-                    <select name="ward" data-bind="
+                    <select name="ward_id" data-bind="
                             options: listWards,
                             optionsText: function(item){return item.name},
                             optionsValue: function(item){return item.id},
@@ -39,13 +39,13 @@
             <div class="row">
                 <div class="title">Đường</div>
                 <div class="content">
-                    <textarea data-bind="textInput: location"></textarea>
+                    <textarea data-bind="textInput: location" name="location"></textarea>
                 </div>
             </div>
             <div class="row">
                 <div class="title">Loại phòng</div>
                 <div class="content">
-                    <select name="typeRoom" data-bind="
+                    <select name="room_type_id" data-bind="
                             options: listRoomTypes,
                             optionsText: function(item){return item.name},
                             optionsValue: function(item){return item.id},
@@ -63,12 +63,26 @@
             <div class="row">
                 <div class="title">Giá tiền</div>
                 <div class="content">
-                    <input type="text" id="title" placeholder="Đơn vị (VNĐ)" data-bind="textInput: price">
+                    <input type="text" name="price" placeholder="Đơn vị (VNĐ)" data-bind="textInput: price">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="title">Ghi chú</div>
+                <div class="content">
+                    <textarea data-bind="textInput: description" name="description"></textarea>
                 </div>
             </div>
-        </div>
-        <div class="btn-wrapper">
-            <button class="btn-submit" data-bind="event: {tap: publish}">Đăng bài</button>
-        </div>
+            <div class="row">
+                <div class="title">Ảnh chi tiết</div>
+                <div class="content">
+                    <input type="file" name="files" accept="image/*" multiple="multiple"/>
+
+                </div>
+            </div>
     </div>
+    <div class="btn-wrapper">
+        <button class="btn-submit" data-bind="event: {tap: publish}">Đăng bài</button>
+    </div>
+    </form>
 </div>
