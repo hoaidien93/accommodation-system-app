@@ -34,31 +34,43 @@ addressAPI.getRoomTypes().then((res) => {
 }).catch((e) => {
     console.log(e);
 });
-
 this.publish = () => {
-    store.isShowLoading(true);
-    let formData = new FormData($('#form-post')[0]);
-    /*
-    let listFiles = $('input[type=file]')[0].files;
-    for (let i = 0; i < listFiles.length; i++) {
-        formData.append(`files[${i}]`, listFiles[i]);
+    if (!checkFillAllData()) showPopupFail();
+    else {
+        store.isShowLoading(true);
+        let formData = new FormData($('#form-post')[0]);
+        postAPI.createPost(formData).then((res) => {
+            store.isShowLoading(false);
+            showPopupSuccess();
+        }).catch((e) => {
+            showPopupFail();
+            console.log(e);
+        })
     }
-    formData.append('area', this.area());
-    formData.append('description', this.description());
-    formData.append('title', this.title());
-    formData.append('district_id', this.selectedDistrict());
-    formData.append('location', this.location());
-    formData.append('price', this.price());
-    formData.append('room_type_id', this.selectedRoomType());
-    formData.append('ward_id', this.selectedWard());
-*/
-    console.log(formData);
-    postAPI.createPost(formData).then((res) => {
-        console.log(res);
-        store.isShowLoading(false);
-        //Hiện Popup
-        app.setPage("MyRoom");
-    }).catch((e) => {
-        console.log(e);
-    })
+}
+
+this.removePopupFail = () => {
+    $("#popup-fail").removeClass("active");
+    store.isShowBlank(false);
+}
+
+this.removePopupSuccess = () => {
+    store.isShowBlank(false);
+    app.setPage("MyRoom");
+}
+
+let checkFillAllData = () => {
+    res = this.title() && this.selectedDistrict() && this.selectedWard() && this.location() && this.selectedRoomType() && this.area() && this.price() && this.description() && ($("input[type=file]")[0].files.length >= 5);
+    return res;
+
+}
+
+let showPopupFail = () => {
+    $("#popup-fail").addClass("active");
+    store.isShowBlank(true);
+}
+
+let showPopupSuccess = () => {
+    $("#popup-success").addClass("active");
+    store.isShowBlank(true);
 }

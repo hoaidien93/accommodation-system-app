@@ -1,4 +1,26 @@
 #post-page {
+    .popup {
+        position: fixed;
+        background: #fff;
+        top: 37%;
+        width: 80vw;
+        border-radius: 5px;
+        margin: 0 10vw;
+        height: 140px;
+        z-index: 14;
+        text-align: center;
+        font-size: 1.1rem;
+        padding-top: 19px;
+        transform: scale(0);
+        transition: .3s;
+
+        >div{
+            padding-bottom: 40px;
+        }
+    }
+    .popup.active{
+        transform: scale(1);
+    }
     .header-title {
         text-align: center;
         color: #403c3c;
@@ -15,6 +37,11 @@
                 margin-bottom: 10px;
                 .title {
                     width: 25%;
+                }
+                .note {
+                    font-size: 0.75rem;
+                    color: red;
+                    font-style: italic;
                 }
                 .content {
                     width: 75%;
@@ -42,12 +69,13 @@
     .btn-wrapper {
         text-align: center;
         padding-top: 20px;
-        button.btn-submit {
-            padding: 7px 15px;
-            border-radius: 5px;
-            background-color: var(--main-color-orange-dark);
-            border: 1px solid var(--main-color-orange-dark);
-            color: white;
-        }
+        
+    }
+    button.btn-submit {
+        padding: 7px 15px;
+        border-radius: 5px;
+        background-color: var(--main-color-orange-dark);
+        border: 1px solid var(--main-color-orange-dark);
+        color: white;
     }
 }

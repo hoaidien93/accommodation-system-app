@@ -1,6 +1,14 @@
 <div id="post-page">
     <com-slider></com-slider>
     <com-headercontext></com-headercontext>
+    <div class="popup fail" id="popup-fail">
+        <div>Vui lòng điền đầy đủ thông tin</div>
+        <button class="btn-submit" style="padding: 7px 22px;" data-bind="event: {tap: removePopupFail}">OK</button>
+    </div>
+    <div class="popup success" id="popup-success">
+        <div>Đăng bài thành công</div>
+        <button class="btn-submit" style="padding: 7px 22px;" data-bind="event: {tap: removePopupSuccess}">OK</button>
+    </div>
     <div class="body-content">
         <h3 class="header-title">Thêm bài đăng</h3>
         <form class="content-wrapper" id="form-post">
@@ -13,7 +21,7 @@
             <div class="row">
                 <div class="title">Quận</div>
                 <div class="content">
-                    <select  name="district_id" data-bind="
+                    <select name="district_id" data-bind="
                             options: listDistrict,
                             optionsText: function(item){return item.name},
                             optionsValue: function(item){return item.id},
@@ -76,9 +84,12 @@
             <div class="row">
                 <div class="title">Ảnh chi tiết</div>
                 <div class="content">
-                    <input type="file" name="files" accept="image/*" multiple="multiple"/>
-
+                    <input type="file" name="files" accept="image/*" multiple="multiple" />
                 </div>
+            </div>
+            <div class="row">
+                <div class="title"></div>
+                <div class="note">* Tối thiểu 5 hình ảnh</div>
             </div>
     </div>
     <div class="btn-wrapper">
