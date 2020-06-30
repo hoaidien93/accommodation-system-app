@@ -176,3 +176,16 @@ textarea {
 .dp-flex{
     display: flex;
 }
+
+.btn-wrapper {
+    text-align: center;
+    padding-top: 20px;
+    
+}
+button.btn-submit {
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: var(--main-color-orange-dark);
+    border: 1px solid var(--main-color-orange-dark);
+    color: white;
+}

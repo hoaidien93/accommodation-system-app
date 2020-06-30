@@ -31,6 +31,21 @@ define(["API/AbstractAPI"], () => {
             return this.send("GET", `/post/view-detail?post_id=${id}`, {
             });
         }
+
+        this.updateImage = (formData) => {
+            return this.send("POST", "/post/upload-images", formData, {
+                processData: false,
+                contentType: 'multipart/form-data'
+            });
+        }
+
+        this.createPost = (data) => {
+            return this.send("POST", "/post/create", data, true);
+        }
+
+        this.updatePost = (data) => {
+            return this.send("POST", "/post/update", data);
+        }
     }
     return new APIPost();
 })

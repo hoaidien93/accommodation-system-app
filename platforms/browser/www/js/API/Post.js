@@ -42,6 +42,10 @@ define(["API/AbstractAPI"], () => {
         this.createPost = (data) => {
             return this.send("POST", "/post/create", data, true);
         }
+
+        this.updatePost = (data) => {
+            return this.send("POST", "/post/update", data);
+        }
     }
     return new APIPost();
 })
