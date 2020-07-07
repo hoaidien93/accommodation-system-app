@@ -8,6 +8,10 @@ define(["API/AbstractAPI"], () => {
             return this.send("GET", "/notification/setting/get", {
             });
         }
+
+        this.update = (data) => {
+            return this.send("POST", "/notification/setting/update", data);
+        }
     }
     return new APINotify();
 })

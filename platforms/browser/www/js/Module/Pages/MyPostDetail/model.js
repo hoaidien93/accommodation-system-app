@@ -14,6 +14,25 @@ this.price = ko.observable(request.price || 0);
 this.area = ko.observable(request.area || 0);
 this.location = ko.observable(request.location || "");
 this.description = ko.observable(request.description || "");
+this.status = ko.observable("Cập nhật thành công");
+this.isOpenStatus = ko.observable(true);
+
+this.isOpenStatus.subscribe((newValue) => {
+    if(!newValue){
+        $('input, select, textarea').attr('disabled',"")
+    }else{
+        $('input, select, textarea').not('.disabled').prop("disabled", false)
+    }
+    store.isShowLoading(true);
+    postAPI.updateStatus(request.id,+newValue).then((res)=>{
+        console.log(res);
+        this.status("Cập nhật thành công");
+        store.isShowLoading(false);
+        showPopupSuccess();
+    }).catch((e)=>{
+        console.log(e);
+    })
+})
 this.selectedDistrict.subscribe((e) => {
     if (!isFirstTime) {
         if (e) {
@@ -42,7 +61,10 @@ addressAPI.getDistricts().then((res) => {
     updateFirstTimeWard(request.district_id);
 }).catch((e) => {
     console.log(e);
-})
+});
+
+
+
 addressAPI.getRoomTypes().then((res) => {
     this.listRoomTypes(res.data);
     this.selectedRoomType(request.room_type_id)
@@ -52,7 +74,6 @@ addressAPI.getRoomTypes().then((res) => {
 
 this.update = () => {
     store.isShowLoading(true);
-    
     let dataUpdate = {
         post_id: request.id,
         title: this.title(),
@@ -60,11 +81,22 @@ this.update = () => {
         price: this.price()
     }
     postAPI.updatePost(dataUpdate).then((res) => {
+        this.status("Cập nhật thành công");
         store.isShowLoading(false);
         showPopupSuccess();
     }).catch((e) => {
         console.log(e);
-    })
+    });
+}
+this.deletePost = () => {
+    store.isShowLoading(true);
+    postAPI.deletePost(request.id).then((res) => {
+        this.status("Xóa bài đăng thành công");
+        store.isShowLoading(false);
+        showPopupSuccess();
+    }).catch((e) => {
+        console.log(e);
+    });
 }
 
 this.removePopupSuccess = () => {

@@ -1,6 +1,7 @@
 let store = require("Store/Store");
 this.isShow = ko.observable(false);
-
+this.fullName = ko.observable(localStorage.getItem('name') || "");
+this.avatar = ko.observable(localStorage.getItem('imageURL') || "");
 this.backHome = () => {
 
 }

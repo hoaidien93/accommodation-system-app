@@ -16,6 +16,13 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <universal-links>
+        <host name="localhost" scheme="https" />
+        <host name="doantotnghiep-2a3f4.web.app" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
     <hook src="www/js/Platform/Cordova/Hooks/beforeBuild.js" type="before_build" />
     <hook src="www/js/Platform/Cordova/Hooks/afterBuild.js" type="after_build" />
+    <preference name="android-minSdkVersion" value="19" />
 </widget>

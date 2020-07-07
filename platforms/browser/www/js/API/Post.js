@@ -46,6 +46,25 @@ define(["API/AbstractAPI"], () => {
         this.updatePost = (data) => {
             return this.send("POST", "/post/update", data);
         }
+
+        this.addComment = (post_id, content) => {
+            return this.send("POST", "/post/comment/add", {
+                post_id,
+                content
+            });
+        }
+
+        this.deletePost = (post_id) => {
+            return this.send("POST", "/post/delete?post_id=" + post_id, {
+            });
+        }
+
+        this.updateStatus = (post_id,status) =>{
+            return this.send("POST","/post/update/status",{
+                post_id,
+                status
+            })
+        }
     }
     return new APIPost();
 })

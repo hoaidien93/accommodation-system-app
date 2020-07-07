@@ -40,11 +40,14 @@
                 position: absolute;
                 bottom: 5px;
                 width: 100%;
-                .price {
+                .content-price {
                     color: #c52020;
-                    font-size: .9rem;
+                    font-size: 0.9rem;
                     font-weight: bold;
                     padding-bottom: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    padding-right: 15px;
                 }
                 .content-description {
                     font-size: .8rem;

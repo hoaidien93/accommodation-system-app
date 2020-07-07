@@ -22,7 +22,10 @@ document.addEventListener("deviceready", () => {
                     require(['Platform/Core/Application'], function (Application) {
                         var app = new Application(document.querySelector('.app'));
                         window.app = app;
-                        app.Screen = "Home";
+                        let email = localStorage.getItem('email');
+                        if(email){
+                            app.Screen = "Home";
+                        }else app.Screen = "Login"
                         app.Start();
                     });
                 });

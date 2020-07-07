@@ -17,10 +17,17 @@ define(["API/AbstractAPI"], () => {
                 "order": 1,
                 "page": page,
                 "size": SIZE,
-                "location": str 
+                "location": str
             });
         }
 
+        this.filter = (data,page = 0) => {
+            return this.send("POST", "/post/search", Object.assign({
+                "order": 1,
+                "page": page,
+                "size": SIZE,
+            }, data));
+        }
 
     }
     return new APISearch();
