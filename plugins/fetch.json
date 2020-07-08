@@ -81,5 +81,25 @@
     },
     "is_top_level": false,
     "variables": {}
+  },
+  "cordova-plugin-firebase-authentication": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-firebase-authentication"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-googleplus": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus"
+    },
+    "is_top_level": true,
+    "variables": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.649195066861-jko1msk8gr23dq6f1oh2qtkqfojqalds",
+      "WEB_APPLICATION_CLIENT_ID": "649195066861-vmuch8aoo3eaqhl2qrqpje5j08jpfsu2.apps.googleusercontent.com",
+      "PLAY_SERVICES_VERSION": "17.0.0"
+    }
   }
 }

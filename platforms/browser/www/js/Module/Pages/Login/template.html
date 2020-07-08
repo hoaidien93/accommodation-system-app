@@ -1,3 +1,9 @@
-<div>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+<div class="login-page">
+    <div class="title">
+        HD Application
+    </div>
+    <div class="sign-in-wrapper">
+        <div id="signInBrowser" class="g-signin2" data-onsuccess="onSignIn"></div>
+        <button id="signInAndroid" onclick="return gpPlusLogin();">Login with Google</button>
+    </div>
 </div>

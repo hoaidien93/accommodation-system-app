@@ -18,11 +18,12 @@
     "cordova-android": "^8.1.0",
     "cordova-browser": "^6.0.0",
     "cordova-plugin-firebase-analytics": "^4.3.0",
+    "cordova-plugin-firebase-authentication": "3.3.0",
     "cordova-plugin-firebase-messaging": "^4.4.1",
+    "cordova-plugin-googleplus": "git+https://github.com/EddyVerbruggen/cordova-plugin-googleplus.git",
     "cordova-plugin-whitelist": "^1.3.4",
     "cordova-support-android-plugin": "^1.0.2",
     "cordova-support-google-services": "^1.4.0",
-    "cordova-universal-links-plugin-fix": "1.2.1",
     "create-file": "^1.0.1",
     "node-sass": "^4.14.1",
     "readline-sync": "^1.4.10",
@@ -36,7 +37,15 @@
         "FIREBASE_MESSAGING_VERSION": "20.1.+",
         "ANDROIDX_CORE_VERSION": "1.2.+"
       },
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-firebase-authentication": {
+        "FIREBASE_AUTH_VERSION": "19.3.+"
+      },
+      "cordova-plugin-googleplus": {
+        "REVERSED_CLIENT_ID": "com.googleusercontent.apps.649195066861-jko1msk8gr23dq6f1oh2qtkqfojqalds",
+        "WEB_APPLICATION_CLIENT_ID": "649195066861-vmuch8aoo3eaqhl2qrqpje5j08jpfsu2.apps.googleusercontent.com",
+        "PLAY_SERVICES_VERSION": "17.0.0"
+      }
     },
     "platforms": [
       "browser",

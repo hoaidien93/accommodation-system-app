@@ -1,0 +1,42 @@
+.login-page {
+    background-image: url("../img/bg.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    .title {
+        color: white;
+        font-size: 2rem;
+        font-family: Roboto;
+        padding-top: 215px;
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 50px;
+    }
+    .sign-in-wrapper {
+        width: 100%;
+        text-align: center;
+        button#signInAndroid {
+            padding: 10px 15px;
+            border: none;
+            background: #fff;
+            border-radius: 5px;
+            border: 1px solid var(--main-color-orange-dark);
+        }
+        .g-signin2 {
+            justify-content: center;
+            display: flex;
+            > div {
+                height: 37px;
+                width: 140px !important;
+                border-radius: 5px;
+                .abcRioButtonContentWrapper {
+                    display: flex;
+                    align-items: center;
+                    .abcRioButtonContents {
+                        padding-left: 17px;
+                    }
+                }
+            }
+        }
+    }
+}

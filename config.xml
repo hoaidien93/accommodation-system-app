@@ -17,6 +17,9 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <plugin name="cordova-plugin-googleplus" spec="~4.0.9">
+        <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.649195066861-jko1msk8gr23dq6f1oh2qtkqfojqalds" />
+    </plugin>
     <platform name="android">
         <allow-intent href="market:*" />
         <hook src="www/js/Platform/Cordova/Hooks/beforeBuild.js" type="before_build" />

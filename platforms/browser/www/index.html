@@ -25,14 +25,33 @@
     <com-blank></com-blank>
     <script>
         function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId());
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
-            window.localStorage.setItem('name',profile.getName());
-            window.localStorage.setItem('email', profile.getEmail());
-            window.localStorage.setItem('imageURL', profile.getImageUrl());
+            let profile = googleUser.getBasicProfile();
+            setLocalStorage({
+                tokenGoogle: gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token,
+                name: profile.getName(),
+                email: profile.getEmail(),
+                imageURL: profile.getImageUrl()
+            })
+            app.setPage("Home");
+        }
+
+        function gpPlusLogin() {
+            window.plugins.googleplus.login({}, function (obj) {
+                console.log(obj);
+                setLocalStorage({
+                    tokenGoogle: obj.accessToken,
+                    name: obj.displayName,
+                    email: obj.email,
+                    imageURL: '/'
+                })
+            },
+                function (msg) { alert("error: " + msg); }
+            );
+        }
+        function setLocalStorage(data) {
+            Object.keys(data).forEach((key) => {
+                window.localStorage.setItem(key, data[key]);
+            })
         }
     </script>
     <script type="text/javascript" src="cordova.js"></script>
