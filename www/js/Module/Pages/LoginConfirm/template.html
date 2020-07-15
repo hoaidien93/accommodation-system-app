@@ -1,5 +1,8 @@
 <div class="login-page">
-    <div class="title">
+    <div class="back-btn" data-bind="directInfo: {to: '#previousPage'}">
+        <i class="far fa-chevron-left"></i>
+    </div>
+    <div class="title" style="padding-bottom: 40px;">
         <div class="img-wrapper">
             <img src="/img/logo.png">
         </div>
@@ -7,6 +10,7 @@
     </div>
     <div class="sign-in-wrapper">
         <div class="w-80" style="margin-bottom: 35px;">
+            <div class="status">Đã gởi mã đến <span data-bind="text: parsePhoneNumber"></span></div>
             <div class="phone-number" style="text-align: center;">Nhập mã bảo mật</div>
             <div class="mm-number">
                 <div class="mm-number-container">
@@ -37,6 +41,15 @@
         </div>
         <div class="w-80">
             <button class="btn-continue" data-bind="event: {tap: confirm}">Xác nhận</button>
+        </div>
+        <div class="w-80">
+            <div>Bạn không nhận được mã ?
+                <span id="sendCodeAgain" data-bind="hidden: showSendAgain">
+                    Gởi lại sau <span id="counter">30</span>
+                </span>
+                <span data-bind="event: {tap: sendAgain}, visible: showSendAgain" style="color: green; text-decoration: underline">Gởi
+                    lại</span>
+            </div>
         </div>
     </div>
 </div>

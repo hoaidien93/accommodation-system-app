@@ -3,6 +3,10 @@ const Store = require("Store/Store");
 this.phoneNumber = this._request.phoneNumber;
 let isEnableButton = false;
 
+this.parsePhoneNumber = this.phoneNumber.replace(/^\+84/, "0");
+
+this.showSendAgain = ko.observable(false);
+
 this.afterBinding = () => {
     $(".mm-number-input-item > input").on('input', function (event) {
         let length = this.value.length;
@@ -24,8 +28,34 @@ this.afterBinding = () => {
             $('.btn-continue').css({ 'background-color': '#fff', 'color': '#000' })
             isEnableButton = false;
         }
-    })
+    });
 
+    initCounter();
+}
+
+let initCounter = () => {
+    let counter = 30;
+    let itv = setInterval(() => {
+        document.getElementById("counter").innerHTML = --counter;
+        if (counter === 0) {
+            clearInterval(itv);
+            this.showSendAgain(true);
+        }
+    }, 1000);
+}
+
+this.sendAgain = () => {
+    Store.isShowLoading(true);
+    RegisterAPI.getPhoneCode(this.phoneNumber).then((res) => {
+        Store.isShowLoading(false);
+        if (res.code == 0) {
+            initCounter();
+            this.showSendAgain(false);
+        }
+    }).catch((e) => {
+        Store.isShowLoading(false);
+        console.log(e);
+    })
 }
 
 let getCode = () => {
@@ -41,13 +71,15 @@ this.confirm = () => {
         let code = getCode();
         Store.isShowLoading(true);
         RegisterAPI.phoneLogin(this.phoneNumber, code).then((res) => {
-            console.log(res);
-            Store.isShowLoading(false);
-            localStorage.setItem("appToken", res.data);
-            app.setPage("Home");
+            if (res.code == 0) {
+                Store.isShowLoading(false);
+                localStorage.setItem("appToken", res.data);
+                app.setPage("Home");
+            }
         }).catch((e) => {
             Store.isShowLoading(false);
             console.log(e);
         })
     }
 }
+
