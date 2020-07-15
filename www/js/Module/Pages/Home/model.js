@@ -2,6 +2,9 @@ const searchAPI = require("API/Search");
 const addressAPI = require("API/Address");
 const postAPI = require("API/Post");
 const store = require("Store/Store");
+const userAPI = require("API/UserAPI");
+
+
 const PAGE_SIZE = 10;
 let dataChangePage = this._request.data;
 this.listPinID = ko.observableArray([]);
@@ -120,7 +123,16 @@ this.afterBinding = () => {
                 else getStartPage();
             }
         }
+    });
+
+    userAPI.getInfo().then((res)=>{
+        localStorage.setItem("imageURL",res.data.avatar);
+        localStorage.setItem("name",res.data.display_name);
+    }).catch((e)=>{
+        console.log(e);
     })
+
+
 }
 
 let getStartPage = () => {

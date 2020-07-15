@@ -1,9 +1,22 @@
 <div class="login-page">
     <div class="title">
-        HD Application
+        <div class="img-wrapper">
+            <img src="./img/logo.png">
+        </div>
+        HD System
     </div>
     <div class="sign-in-wrapper">
+        <div class="w-80">
+            <div class="phone-number">Đăng nhập bằng số điện thoại của bạn</div>
+            <input type="text" id="enter-number" data-bind="textInput: phoneNumber">
+        </div>
+
+        <div class="w-80">
+            <button class="btn-continue" data-bind="event: {tap: getCode}">Tiếp tục</button>
+        </div>
+
         <div id="signInBrowser" class="g-signin2" data-onsuccess="onSignIn"></div>
+
         <button id="signInAndroid" onclick="return gpPlusLogin();">Login with Google</button>
     </div>
 </div>

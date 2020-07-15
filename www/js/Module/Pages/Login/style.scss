@@ -3,11 +3,19 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    .img-wrapper {
+        width: 150px;
+        margin: auto;
+        margin-bottom: 10px;
+        >img{
+            width: 100%;
+        }
+    }
     .title {
         color: white;
         font-size: 2rem;
         font-family: Roboto;
-        padding-top: 215px;
+        padding-top: 47px;
         text-align: center;
         font-weight: bold;
         padding-bottom: 50px;
@@ -38,5 +46,39 @@
                 }
             }
         }
+    }
+
+    #enter-number {
+        border: none;
+        background: transparent;
+        border-bottom: 1px solid;
+    }
+    .w-80 {
+        width: 90vw;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 20px;
+        button.btn-continue {
+            border: none;
+            padding: 12px 0px;
+            border-radius: 5px;
+        }
+        input {
+            height: 36px;
+            font-size: 1.5rem;
+        }
+        input#enter-number:focus {
+            outline: none;
+            border-color: #2211ec;
+        }
+        .phone-number {
+            width: 100%;
+            margin-bottom: 5px;
+            color: gray;
+            text-align: left;
+        }
+    }
+    .w-80 > * {
+        width: 100%;
     }
 }
