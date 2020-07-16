@@ -2,10 +2,15 @@ const RegisterAPI = require("API/Register");
 const Store = require("Store/Store");
 this.phoneNumber = this._request.phoneNumber;
 let isEnableButton = false;
-
+let itv;
 this.parsePhoneNumber = this.phoneNumber.replace(/^\+84/, "0");
 
 this.showSendAgain = ko.observable(false);
+
+this.backPage = () => {
+    if (itv) clearInterval(itv);
+    app.backTo();
+}
 
 this.afterBinding = () => {
     $(".mm-number-input-item > input").on('input', function (event) {
@@ -35,7 +40,7 @@ this.afterBinding = () => {
 
 let initCounter = () => {
     let counter = 30;
-    let itv = setInterval(() => {
+    setInterval(() => {
         document.getElementById("counter").innerHTML = --counter;
         if (counter === 0) {
             clearInterval(itv);
@@ -68,6 +73,7 @@ let getCode = () => {
 
 this.confirm = () => {
     if (isEnableButton) {
+        clearInterval(itv);
         let code = getCode();
         Store.isShowLoading(true);
         RegisterAPI.phoneLogin(this.phoneNumber, code).then((res) => {

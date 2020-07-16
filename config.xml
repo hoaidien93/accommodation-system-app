@@ -32,5 +32,6 @@
     <platform name="browser">
         <hook src="www/js/Platform/Cordova/Hooks/beforeBuild.js" type="before_build" />
         <hook src="www/js/Platform/Cordova/Hooks/afterBuild.js" type="after_build" />
+        
     </platform>
 </widget>

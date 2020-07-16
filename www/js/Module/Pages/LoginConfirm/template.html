@@ -1,10 +1,13 @@
 <div class="login-page">
-    <div class="back-btn" data-bind="directInfo: {to: '#previousPage'}">
+    <div class="back-btn" data-bind="event: {tap: backPage}">
         <i class="far fa-chevron-left"></i>
     </div>
-    <div class="title" style="padding-bottom: 40px;">
+    <div class="header-bg">
+        <img src="./img/header_bg.svg">
+    </div>
+    <div class="title" style="padding-bottom: 30px;">
         <div class="img-wrapper">
-            <img src="/img/logo.png">
+            <img src="./img/logo.png">
         </div>
         HD System
     </div>
@@ -47,7 +50,8 @@
                 <span id="sendCodeAgain" data-bind="hidden: showSendAgain">
                     Gởi lại sau <span id="counter">30</span>
                 </span>
-                <span data-bind="event: {tap: sendAgain}, visible: showSendAgain" style="color: green; text-decoration: underline">Gởi
+                <span data-bind="event: {tap: sendAgain}, visible: showSendAgain"
+                    style="color: green; text-decoration: underline">Gởi
                     lại</span>
             </div>
         </div>

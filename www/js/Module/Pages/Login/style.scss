@@ -1,13 +1,28 @@
 .login-page {
-    background-image: url("../img/bg.jpg");
+    background-image: url("../img/bg.svg");
     background-position: center;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    .header-bg {
+        img {
+            width: 100%;
+        }
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .img-wrapper {
         width: 150px;
         margin: auto;
         margin-bottom: 10px;
-        >img{
+        > img {
             width: 100%;
         }
     }
@@ -15,7 +30,6 @@
         color: white;
         font-size: 2rem;
         font-family: Roboto;
-        padding-top: 47px;
         text-align: center;
         font-weight: bold;
         padding-bottom: 50px;

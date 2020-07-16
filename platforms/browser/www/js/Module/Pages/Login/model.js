@@ -1,6 +1,7 @@
 const RegisterAPI = require("API/Register");
 const Store = require("Store/Store");
 let enableButton = false;
+
 this.afterBinding = () => {
     if (cordova.platformId === "browser") {
         document.getElementById("signInAndroid").style.display = "none";

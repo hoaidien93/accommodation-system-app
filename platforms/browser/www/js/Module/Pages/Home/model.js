@@ -112,6 +112,21 @@ this.afterBinding = () => {
     }).catch((e) => {
     });
 
+
+    cordova.plugins.firebase.messaging.onMessage(function (payload) {
+        //console.log("New foreground FCM message: ", payload);
+        //app.setPage("")
+    });
+
+    cordova.plugins.firebase.messaging.onBackgroundMessage(function (payload) {
+        console.log("New background FCM message: ", payload);
+        setTimeout(() => {
+            app.setPage("PostDetail", { id: payload.post_id });
+        },1000);
+
+    });
+
+
     $(window).off('scroll');
     // Detect scroll end of page
     $(window).on('scroll', function () {
@@ -125,10 +140,10 @@ this.afterBinding = () => {
         }
     });
 
-    userAPI.getInfo().then((res)=>{
-        localStorage.setItem("imageURL",res.data.avatar);
-        localStorage.setItem("name",res.data.display_name);
-    }).catch((e)=>{
+    userAPI.getInfo().then((res) => {
+        localStorage.setItem("imageURL", res.data.avatar);
+        localStorage.setItem("name", res.data.display_name);
+    }).catch((e) => {
         console.log(e);
     })
 
@@ -210,7 +225,7 @@ let callFilter = () => {
         "min_price": this.converterPrice().min_price,
         "ward_id": this.selectedWard(),
         "location": document.getElementById("search").value
-    },page++).then((res) => {
+    }, page++).then((res) => {
         store.isShowLoading(false);
         size = Math.ceil(res.data.total / PAGE_SIZE);
         this.resultSearch.push(...res.data.hits.map((e) => { return Object.assign(e, { pinned: ko.observable(false) }) }));

@@ -12,7 +12,14 @@ this.myRoom = () => {
 
 }
 this.logout = () => {
-
+    localStorage.clear();
+    cordova.plugins.firebase.messaging.unsubscribe("Test").then((e)=>{
+        console.log(e)
+    }).catch((e)=>{
+        console.log(e);
+    });
+    store.isShowBlank(false);
+    app.setPage("Login");
 }
 this.changePage = (page) => {
     app.setPage(page);
