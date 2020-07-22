@@ -155,7 +155,9 @@
             }
 
             .img-wrapper > img {
-                width: 100%;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
             }
 
             .contact-wrapper {
@@ -182,6 +184,10 @@
             background-color: var(--main-color-orange-dark);
             display: flex;
             align-items: center;
+        }
+        a{
+            color: white;
+            text-decoration: none;
         }
     }
     .image-viewer.active {

@@ -12,13 +12,14 @@ this.myRoom = () => {
 
 }
 this.logout = () => {
-    localStorage.clear();
-    cordova.plugins.firebase.messaging.unsubscribe("Test").then((e)=>{
+    let user_id = localStorage.getItem("userId");
+    cordova.plugins.firebase.messaging.unsubscribe(`/topics/notification.user.${user_id}`).then((e)=>{
         console.log(e)
     }).catch((e)=>{
         console.log(e);
     });
     store.isShowBlank(false);
+    localStorage.clear();
     app.setPage("Login");
 }
 this.changePage = (page) => {

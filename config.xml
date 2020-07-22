@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.cordova.hdsystem" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>HD System</name>
     <description>
     
@@ -19,11 +19,18 @@
     <allow-intent href="geo:*" />
     <plugin name="cordova-plugin-googleplus" spec="~4.0.9">
         <variable name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.649195066861-jko1msk8gr23dq6f1oh2qtkqfojqalds" />
+        
     </plugin>
     <platform name="android">
         <allow-intent href="market:*" />
         <hook src="www/js/Platform/Cordova/Hooks/beforeBuild.js" type="before_build" />
         <hook src="www/js/Platform/Cordova/Hooks/afterBuild.js" type="after_build" />
+        <icon src="res/android/ldpi.png" density="ldpi" />
+        <icon src="res/android/mdpi.png" density="mdpi" />
+        <icon src="res/android/hdpi.png" density="hdpi" />
+        <icon src="res/android/xhdpi.png" density="xhdpi" />
+        <icon src="res/android/xxhdpi.png" density="xxhdpi" />
+        <icon src="res/android/xxxhdpi.png" density="xxxhdpi" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

@@ -44,8 +44,9 @@
         }
 
         function gpPlusLogin() {
+            console.log(1);
             window.plugins.googleplus.login({
-                webClientId: '649195066861-vmuch8aoo3eaqhl2qrqpje5j08jpfsu2.apps.googleusercontent.com'
+                webClientId: '649195066861-l3kdb6478u61317jvt0vrn9qdaspufjo.apps.googleusercontent.com'
             }, function (obj) {
                 getTokenServer(obj.idToken).then((res) => {
                     setLocalStorage({

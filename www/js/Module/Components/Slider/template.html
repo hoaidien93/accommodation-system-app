@@ -1,7 +1,7 @@
 <div class="top">
     <div class="border-avatar">
         <div class="avatar">
-            <img data-bind="attr: {src: avatar}"  referrerpolicy="no-referrer">
+            <img data-bind="attr: {src: avatar}, event: {tap: changePage.bind(this,'Profile')}"  referrerpolicy="no-referrer">
         </div>
     </div>
     <div class="information-user">

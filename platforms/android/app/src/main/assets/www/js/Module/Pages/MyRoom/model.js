@@ -19,6 +19,7 @@ this.afterBinding = (e) => {
 
 let getMyRoom = () => {
     postAPI.getMyPost(page++).then((res) => {
+        console.log(res);
         this.listResult.push(...res.data.hits);
         size = Math.ceil(res.data.total / PAGE_SIZE);
     }).catch((err) => {

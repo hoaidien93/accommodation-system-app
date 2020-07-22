@@ -38,7 +38,7 @@
     },
     "cordova-plugin-googleplus": {
       "WEB_APPLICATION_CLIENT_ID": "649195066861-vmuch8aoo3eaqhl2qrqpje5j08jpfsu2.apps.googleusercontent.com",
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "io.cordova.hdsystem"
     }
   },
   "dependent_plugins": {},

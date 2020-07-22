@@ -40,7 +40,7 @@ this.afterBinding = () => {
 
 let initCounter = () => {
     let counter = 30;
-    setInterval(() => {
+    itv = setInterval(() => {
         document.getElementById("counter").innerHTML = --counter;
         if (counter === 0) {
             clearInterval(itv);

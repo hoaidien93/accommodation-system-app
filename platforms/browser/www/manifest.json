@@ -3,7 +3,7 @@
   "display": "standalone",
   "name": "HD System",
   "short_name": "HD System",
-  "version": "io.cordova.hellocordova",
+  "version": "io.cordova.hdsystem",
   "author": "Apache Cordova Team",
   "icons": [],
   "start_url": "index.html"

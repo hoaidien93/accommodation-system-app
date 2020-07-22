@@ -1,10 +1,10 @@
-<div id="post-detail-page" data-bind="using: postDetail">
+<div id="post-detail-page" data-bind="with: postDetail">
     <com-slider></com-slider>
     <com-headercontext></com-headercontext>
     <div
         data-bind="class: $root.isShowImageView() ? 'image-viewer active': 'image-viewer', event: {swipe : $root.changeIndexImage}">
         <div class="close-image" data-bind="event: {tap: $root.closeImageView}">X</div>
-        <img data-bind="attr: {src: images[$root.pagingImage().current - 1]}">
+        <img data-bind="attr: {src: images[$root.pagingImage().current - 1]}" referrerpolicy="no-referrer">
         <div class="count" data-bind="using: $root.pagingImage">
             <span data-bind="text: current"></span>
             /
@@ -87,7 +87,7 @@
         </div>
         <div class="contact">
             <div class="img-wrapper">
-                <img data-bind="attr: {src: avatar_user_post}">
+                <img data-bind="attr: {src: avatar_user_post}" referrerpolicy="no-referrer">
             </div>
             <div class="contact-wrapper">
                 <div class="user-post" data-bind="text: use_post"></div>
@@ -109,7 +109,7 @@
             <div class="comment" data-bind="foreach: $root.listComment">
                 <div>
                     <div class="avatar">
-                        <img data-bind="attr: {src: avatar_uer_comment}">
+                        <img data-bind="attr: {src: avatar_uer_comment}" referrerpolicy="no-referrer">
                     </div>
                     <span data-bind="text: user_comment" style="color: #000;"></span>: <span data-bind="text: content"
                         style="font-style: italic;"></span>
@@ -124,7 +124,7 @@
         </div>
     </div>
     <div class="footer pos-fixed">
-        <div>
+        <div data-bind="event: {tap: $root.favoritePost}">
             <svg xmlns="http://www.w3.org/2000/svg" width="15.772" height="15" viewBox="0 0 15.772 15">
                 <path id="Path_1218" data-name="Path 1218"
                     d="M901.319,1153.873l2.437,4.938,5.449.792-3.943,3.844.931,5.427-4.874-2.562-4.874,2.562.931-5.427-3.943-3.844,5.449-.792Z"
@@ -140,7 +140,7 @@
                     transform="translate(-357.452 -249.039)" fill="#fff" />
             </svg>
 
-            <span>&nbsp;&nbsp;Liên hệ</span>
+            <a data-bind="attr: {href: phoneConvert}">&nbsp;&nbsp;Liên hệ</a>
         </div>
     </div>
 </div>
