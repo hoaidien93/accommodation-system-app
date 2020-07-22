@@ -116,7 +116,11 @@ this.selectedDistrict.subscribe((e) => {
 let subscribeMyTopic = (user_id) => {
     cordova.plugins.firebase.messaging.requestPermission({ forceShow: true }).then(function () {
         console.log("You'll get foreground notifications when a push message arrives");
-        cordova.plugins.firebase.messaging.subscribe(`/topics/notification.user.${user_id}`);
+        cordova.plugins.firebase.messaging.subscribe(`/topics/notification.user.${user_id}`).then((e)=>{
+            console.log(e);
+        }).catch((e)=>{
+            console.log(e);
+        })
     }).catch((e) => {
     });
 }

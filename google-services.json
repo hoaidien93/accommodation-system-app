@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:740577124396:android:b00ade2c1cf011d7857189",
-        "android_client_info": {
-          "package_name": "io.cordova.hdsystem"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "740577124396-1fab3p0045s1tl5hq3evh9oqumnravfm.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBIsun04EDoW-ULXlXiDmI9EKUSwba9up8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "740577124396-1fab3p0045s1tl5hq3evh9oqumnravfm.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:740577124396:android:8f78f70db1ce9e87857189",
         "android_client_info": {
           "package_name": "io.cordova.hellocordova"
